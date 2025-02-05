@@ -22,3 +22,12 @@ console.log(instancia1);
 /// si tratas de crear una nueva instancia te devolvera la misma otra vez, no crea una instancia nueva
 const instancia2 = Singleton.getInstance("Instancia Unica 2");
 console.log(instancia2);
+
+
+if (instancia1 === instancia2) {
+    console.log(
+        'Singleton works, both variables contain the same instance.'
+    );
+} else {
+    console.log('Singleton failed, variables contain different instances.');
+}
