@@ -23,7 +23,9 @@ abstract class AbstractHandler implements Handler {
     }
 
     public handle(request: string): string | null {
+       // console.log('nextHandler', this.nextHandler);
         if (this.nextHandler) {
+        //    console.log('nextHandler', this.nextHandler);
             return this.nextHandler.handle(request);
         }
 
