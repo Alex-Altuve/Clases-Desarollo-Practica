@@ -38,7 +38,7 @@ interface Product{
     }
   }
   
-  function clientCode(creator: Creator) {
+  function clientCode_A(creator: Creator) {
     // ...
     console.log('Client: I\'m not aware of the creator\'s class, but it still works.');
     console.log(creator.someOperation()); // call someOperation()
@@ -50,8 +50,8 @@ interface Product{
   * environment.
   */
   console.log('App: Launched with the ConcreteCreatorA.');
-  clientCode(new ConcreteCreatorA());
+  clientCode_A(new ConcreteCreatorA());
   console.log('');
   
   console.log('App: Launched with the ConcreteCreatorB.');
-  clientCode(new ConcreteCreatorB());
+  clientCode_A(new ConcreteCreatorB());
