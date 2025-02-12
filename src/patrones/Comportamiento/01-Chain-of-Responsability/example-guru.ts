@@ -23,7 +23,7 @@ abstract class AbstractHandler implements Handler {
     }
 
     public handle(request: string): string | null {
-       // console.log('nextHandler', this.nextHandler);
+        //console.log('nextHandler', this.nextHandler);
         if (this.nextHandler) {
         //    console.log('nextHandler', this.nextHandler);
             return this.nextHandler.handle(request);
@@ -49,6 +49,7 @@ class MonkeyHandler extends AbstractHandler {
 class SquirrelHandler extends AbstractHandler {
     public handle(request: string): string | null {
         if (request === 'Nut') {
+            console.log('Esta en la clase Squirrel');
             return `Squirrel: I'll eat the ${request}.`;
         }
         return super.handle(request);
@@ -68,8 +69,8 @@ class DogHandler extends AbstractHandler {
  * The client code is usually suited to work with a single handler. In most
  * cases, it is not even aware that the handler is part of a chain.
  */
-function clientCode(handler: Handler) {
-    const foods = ['Nut', 'Banana', 'Cup of coffee'];
+function clientCode_C(handler: Handler) {
+    const foods = ['Nut', 'Banana', 'Cup of coffee', 'MeatBall'];
 
     for (const food of foods) {
         console.log(`Client: Who wants a ${food}?`);
@@ -97,8 +98,8 @@ monkey.setNext(squirrel).setNext(dog);
  * first one in the chain.
  */
 console.log('Chain: Monkey > Squirrel > Dog\n');
-clientCode(monkey);
+clientCode_C(monkey);
 console.log('');
 
 console.log('Subchain: Squirrel > Dog\n');
-clientCode(squirrel);
+clientCode_C(squirrel);
