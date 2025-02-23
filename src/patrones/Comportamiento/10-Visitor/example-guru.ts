@@ -88,7 +88,7 @@ class ConcreteVisitor2 implements Visitor {
  * figuring out their concrete classes. The accept operation directs a call to
  * the appropriate operation in the visitor object.
  */
-function clientCode(components: Component_Visitor [], visitor: Visitor) {
+function clientCode_V6(components: Component_Visitor [], visitor: Visitor) {
     // ...
     for (const component of components) {
         component.accept(visitor);
@@ -103,9 +103,9 @@ const components = [
 
 console.log('The client code works with all visitors via the base Visitor interface:');
 const visitor1 = new ConcreteVisitor1();
-clientCode(components, visitor1);
+clientCode_V6(components, visitor1);
 console.log('');
 
 console.log('It allows the same client code to work with different types of visitors:');
 const visitor2 = new ConcreteVisitor2();
-clientCode(components, visitor2);
+clientCode_V6(components, visitor2);
