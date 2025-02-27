@@ -6,7 +6,7 @@ class Singleton{
         this.nombre = nombre;
     }
 
-    static getInstance(type: string): Singleton{
+    public static getInstance(type: string): Singleton{
         if(!this.instance){
             this.instance = new Singleton(type);
         }
