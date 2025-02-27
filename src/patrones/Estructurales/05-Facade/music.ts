@@ -57,10 +57,10 @@ class VideoConverter {
 }
 
 // Código del cliente
-function application() {
+function application_v5() {
     const videoConverter = new VideoConverter();
     videoConverter.convertVideo("my_video.mp4", "avi", "my_audio.mp3");
 }
 
 // Ejecutar la aplicación
-application();
+application_v5();
