@@ -1,7 +1,7 @@
 interface  AbstractProductB{
     usefulFunctionB(): string;
     anotherUsefulFunctionB(collaborator: AbstractProductA): string;
-  }
+}
   
   class ConcreteProductB1 implements AbstractProductB {
     public usefulFunctionB(): string {
