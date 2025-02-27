@@ -36,10 +36,10 @@ class Car{
 }
 
 class CarBuilder implements BuilderCar<Car>{
-    private car: Car;
+    private car!: Car;
 
     constructor(){
-        this.car = new Car();
+        this.reset();
     }
 
     reset(): void {
@@ -68,10 +68,10 @@ class CarBuilder implements BuilderCar<Car>{
 }
 
 class CarManualBuilder implements BuilderCar<CarManual>{
-    private car: CarManual;
+    private car!: CarManual;
 
     constructor(){
-        this.car = new CarManual();
+        this.reset();
     }
 
     reset(): void {
@@ -99,7 +99,7 @@ class CarManualBuilder implements BuilderCar<CarManual>{
     }
 }
 
-class DirectorV1<T,E>{
+class DirectorV1{
     private builder: BuilderCar<Car|CarManual>;
 
     constructor(builder: BuilderCar<Car|CarManual>){
