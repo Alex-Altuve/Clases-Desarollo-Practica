@@ -1,11 +1,11 @@
-interface Prototype {
-    clone(): Prototype;
+interface Prototype_Example {
+    clone(): Prototype_Example;
 }
 
-class ConcretePrototype implements Prototype {
+class Concrete_Prototype implements Prototype_Example {
     field1: string;
 
-    constructor(prototype?: ConcretePrototype) {
+    constructor(prototype?: Concrete_Prototype) {
         if (prototype) {
             this.field1 = prototype.field1;
         } else {
@@ -13,12 +13,12 @@ class ConcretePrototype implements Prototype {
         }
     }
 
-    clone(): Prototype {
-        return new ConcretePrototype(this);
+    clone(): Prototype_Example {
+        return new Concrete_Prototype(this);
     }
 }
 
-class SubClassPrototype extends ConcretePrototype {
+class SubClassPrototype extends Concrete_Prototype {
     field2: string;
 
     constructor(prototype?: SubClassPrototype) {
@@ -30,7 +30,7 @@ class SubClassPrototype extends ConcretePrototype {
         }
     }
 
-    clone(): Prototype {
+    clone(): Prototype_Example {
         return new SubClassPrototype(this);
     }
 }
