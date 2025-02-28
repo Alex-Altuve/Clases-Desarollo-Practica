@@ -59,7 +59,7 @@ class ConcreteImplementationB implements Implementation {
  * the Abstraction class. This way the client code can support any abstraction-
  * implementation combination.
  */
-function clientCode(abstraction: Abstraction) {
+function clientCode_1(abstraction: Abstraction) {
     // ..
 
     console.log(abstraction.operation());
@@ -73,10 +73,10 @@ function clientCode(abstraction: Abstraction) {
  */
 let implementation = new ConcreteImplementationA();
 let abstraction = new Abstraction(implementation);
-clientCode(abstraction);
+clientCode_1(abstraction);
 
 console.log('');
 
 implementation = new ConcreteImplementationB();
 abstraction = new ExtendedAbstraction(implementation);
-clientCode(abstraction);
+clientCode_1(abstraction);
