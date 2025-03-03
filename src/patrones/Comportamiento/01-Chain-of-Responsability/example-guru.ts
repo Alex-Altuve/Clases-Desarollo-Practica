@@ -11,7 +11,7 @@ interface Handler<Request = string, Result = string> {
 /**
  * The default chaining behavior can be implemented inside a base handler class.
  */
-abstract class AbstractHandler implements Handler {
+class AbstractHandler implements Handler {
     private nextHandler: Handler | null = null;
 
     public setNext(handler: Handler): Handler {
