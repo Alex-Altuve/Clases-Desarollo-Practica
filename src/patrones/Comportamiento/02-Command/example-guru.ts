@@ -1,14 +1,14 @@
 /**
  * The Command interface declares a method for executing a command.
  */
-interface Command {
+interface Command_V1 {
     execute(): void;
 }
 
 /**
  * Some commands can implement simple operations on their own.
  */
-class SimpleCommand implements Command {
+class SimpleCommand implements Command_V1 {
     private payload: string;
 
     constructor(payload: string) {
@@ -24,7 +24,7 @@ class SimpleCommand implements Command {
  * However, some commands can delegate more complex operations to other objects,
  * called "receivers."
  */
-class ComplexCommand implements Command {
+class ComplexCommand implements Command_V1 {
     private receiver: Receiver;
 
     /**
@@ -73,17 +73,17 @@ class Receiver {
  * the command.
  */
 class Invoker {
-    private onStart: Command | null = null;
-    private onFinish: Command | null = null;
+    private onStart: Command_V1  | null = null;
+    private onFinish: Command_V1  | null = null;
 
     /**
      * Initialize commands.
      */
-    public setOnStart(command: Command): void {
+    public setOnStart(command: Command_V1 ): void {
         this.onStart = command;
     }
 
-    public setOnFinish(command: Command): void {
+    public setOnFinish(command: Command_V1 ): void {
         this.onFinish = command;
     }
 
