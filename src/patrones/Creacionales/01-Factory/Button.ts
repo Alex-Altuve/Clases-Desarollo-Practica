@@ -1,3 +1,4 @@
+// Prueba
 interface Button{
     render():string;
     onClick(mensaje: string):string;
